@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS specific
+*.DS_Store
+
+# IDE and editor specific
+*.swp
+*.swo
+*.tmp
+*.log
+.vscode/
+.idea/
+.emacs~
+.emacs.d/
+
+# Shell history and temporary files
+.bash_history
+.zsh_history
+.node_repl_history
+.lesshst
+
+# Firefox specific (geckodriver, etc.)
+geckodriver.log
+UIHistory*
+
+# Expo files (React Native or related projects)
+.expo/
+*.expo/
+*.expo-shared/
+
+# npm / yarn debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Other temporary or misc files
+*.metadata
+*.state.json
+archive-content*
+tetris-scores*

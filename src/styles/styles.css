@@ -1,0 +1,10 @@
+/* styles.css */
+.text-stroke {
+    -webkit-text-stroke: 2px black; /* Adjust stroke width and color */
+    color: transparent;
+  }
+  
+  h1 {
+    line-height: 1.2; /* Adjust this value as needed */
+  }
+
