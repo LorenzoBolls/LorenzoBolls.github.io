@@ -1,22 +1,30 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import "../styles/styles.css"
+import "../styles/styles.css";
 
 const Hero = () => {
-  const words = ["Lorenzo", "a Student", "a Developer", "a Creator"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  // Define different word orders for the top and bottom lines
+  const wordsTop = ["Lorenzo", "a Student", "a Creator", "a Leader"];
+  const wordsBottom = ["Lorenzo", "a Developer", "a Teammate", "a Thinker"];
+
+  const cycleDuration = 8000; // Total cycle time for all words (8 seconds)
+  const wordDuration = cycleDuration / wordsTop.length; // Time per word (2 seconds)
+
+  const [currentWordIndexTop, setCurrentWordIndexTop] = useState(0);
+  const [currentWordIndexBottom, setCurrentWordIndexBottom] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000); // Change word every 3 seconds
+      setCurrentWordIndexTop((prev) => (prev + 1) % wordsTop.length);
+      setCurrentWordIndexBottom((prev) => (prev + 1) % wordsBottom.length);
+    }, wordDuration); // Update every 2 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col items-center justify-center bg-gray-100 text-center p-6"
+      className="h-screen flex flex-col items-center justify-center bg-gray-100 text-center p-6 pl-40"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -24,8 +32,9 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="flex flex-col gap-4 items-center"
         style={{
-          width: "100%", // Ensures all lines are the same width
-          maxWidth: "1000px", // Adjust to fit your layout
+          width: "100%",
+          maxWidth: "1060px",
+          paddingLeft: "30px",
         }}
       >
         {/* Top Animated Line */}
@@ -34,8 +43,8 @@ const Hero = () => {
             display: "flex",
             justifyContent: "flex-start",
             overflow: "hidden",
-            height: "116px", // Match the line height of your text
-            width: "100%", // Matches the width of the container
+            height: "116px",
+            width: "100%",
           }}
         >
           <h1
@@ -50,22 +59,22 @@ const Hero = () => {
             <span
               style={{
                 display: "inline-block",
-                width: "12ch", // Reserve space for the longest word
+                width: "12ch",
                 textAlign: "left",
               }}
             >
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={words[currentWordIndex]} // React uses key to re-render and animate
-                  initial={{ y: "100%", opacity: 0 }} // Starts from below
-                  animate={{ y: "0%", opacity: 1 }} // Moves into view
-                  exit={{ y: "-100%", opacity: 0 }} // Exits upward
-                  transition={{ duration: 0.5 }}
+                  key={wordsTop[currentWordIndexTop]}
+                  initial={{ y: "-100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "100%", opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                   style={{
                     display: "inline-block",
                   }}
                 >
-                  {words[currentWordIndex]}
+                  {wordsTop[currentWordIndexTop]}
                 </motion.span>
               </AnimatePresence>
             </span>
@@ -75,27 +84,27 @@ const Hero = () => {
         {/* Static Center Line */}
         <div
           style={{
-            width: "100%", // Matches container width for alignment
+            width: "100%",
             display: "flex",
             justifyContent: "flex-start",
           }}
         >
           <h1
             className="text-4xl md:text-6xl lg:text-8xl font-arialblack"
-            style={{ whiteSpace: "nowrap", lineHeight: "1.2",}}
+            style={{ whiteSpace: "nowrap", lineHeight: "1.2" }}
           >
             Hi, I&apos;m Lorenzo
           </h1>
         </div>
-      
+
         {/* Bottom Animated Line */}
         <div
           style={{
             display: "flex",
             justifyContent: "flex-start",
             overflow: "hidden",
-            height: "116px", // Match the line height of your text
-            width: "100%", // Matches container width
+            height: "116px",
+            width: "100%",
             lineHeight: "1.2",
           }}
         >
@@ -110,22 +119,22 @@ const Hero = () => {
             <span
               style={{
                 display: "inline-block",
-                width: "12ch", // Reserve space for the longest word
+                width: "12ch",
                 textAlign: "left",
               }}
             >
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={words[currentWordIndex]}
-                  initial={{ y: "100%", opacity: 0 }} // Starts from below
-                  animate={{ y: "0%", opacity: 1 }} // Moves into view
-                  exit={{ y: "-100%", opacity: 0 }} // Exits upward
-                  transition={{ duration: 0.5 }}
+                  key={wordsBottom[currentWordIndexBottom]}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                   style={{
                     display: "inline-block",
                   }}
                 >
-                  {words[currentWordIndex]}
+                  {wordsBottom[currentWordIndexBottom]}
                 </motion.span>
               </AnimatePresence>
             </span>

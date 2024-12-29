@@ -70,7 +70,7 @@ const Tab = ({ children, setPosition, onClick }) => {
       }}
       transition={{ type: "spring", stiffness: 300, damping: 15 }} // Smooth spring effect
       className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs 
-      uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base whitespace-nowrap"
     >
       {children}
     </motion.li>
