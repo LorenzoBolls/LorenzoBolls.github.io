@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         arialblack: ['"Arial Black"', 'Arial', 'sans-serif'],
+        montserrat: ['"Montserrat"', 'sans-serif'],
       },
     },
   },

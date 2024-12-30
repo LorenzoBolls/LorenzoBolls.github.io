@@ -29,7 +29,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         className="flex flex-col gap-4 items-center"
         style={{
           width: "100%",
@@ -43,12 +43,12 @@ const Hero = () => {
             display: "flex",
             justifyContent: "flex-start",
             overflow: "hidden",
-            height: "116px",
+            height: "clamp(3em, 37%, 145px)",
             width: "100%",
           }}
         >
           <h1
-            className="text-4xl md:text-6xl lg:text-8xl font-arialblack text-stroke"
+            className="text-4xl md:text-6xl lg:text-8xl font-arialblack text-stroke pb-4"
             style={{
               whiteSpace: "nowrap",
               alignItems: "center",
@@ -103,13 +103,13 @@ const Hero = () => {
             display: "flex",
             justifyContent: "flex-start",
             overflow: "hidden",
-            height: "116px",
+            height: "clamp(3em, 38%, 145px)",
             width: "100%",
             lineHeight: "1.2",
           }}
         >
           <h1
-            className="text-4xl md:text-6xl lg:text-8xl font-arialblack text-stroke"
+            className="text-4xl md:text-6xl lg:text-8xl font-arialblack text-stroke pt-4"
             style={{
               whiteSpace: "nowrap",
               alignItems: "center",
