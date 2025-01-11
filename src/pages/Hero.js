@@ -24,7 +24,8 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col items-center justify-center bg-gray-100 text-center p-6 pl-40"
+      className="h-screen flex flex-col items-center justify-center bg-gray-100 
+      text-center p-6 pl-20 md:pl-30 lg:pl-40"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
