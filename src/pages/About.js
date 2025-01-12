@@ -1,7 +1,6 @@
 import headshot from "../assets/headshot.jpeg";
 import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaFigma } from "react-icons/fa";
-import { SiJavascript, SiMongodb, SiCplusplus, SiBootstrap, SiTailwindcss } from "react-icons/si";
-import "../styles/about.css";
+import { SiJavascript, SiMongodb, SiCplusplus, SiBootstrap, SiTailwindcss, SiGnubash, SiLinux, SiOpencv } from "react-icons/si";
 
 const About = () => {
   const technologies = [
@@ -23,6 +22,9 @@ const About = () => {
               className="w-8 h-8" 
             />
     },
+    { name: "Bash", icon: <SiGnubash className="text-green-700" /> },
+    { name: "Linux Kernel", icon: <SiLinux className="text-gray-600" /> },
+    { name: "OpenCV", icon: <SiOpencv className="text-blue-500" /> },
   ];
 
   return (
