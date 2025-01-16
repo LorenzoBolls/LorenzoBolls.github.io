@@ -163,7 +163,7 @@ const FoldMap = () => {
                   }}
                   className="flex w-full justify-center text-xl font-semibold md:text-4xl"
               >
-                  <p className="rounded-2xl bg-white border-black border-2 px-12 py-5 shadow-lg">
+                  <p className="rounded-2xl bg-white border-black border-2 px-6 py-3 md:px-12 md:py-5 shadow-lg w-auto max-w-full">
                       Click on the Red Dots 🔴
                   </p>
               </motion.div>
@@ -223,7 +223,7 @@ const FoldMap = () => {
                    top-[10%] left-[31%] 
                    sm:top-[10%] sm:left-[31.5%] 
                    md:top-[10%] md:left-[30.5%] 
-                   lg:top-[10%] lg:left-[31%]"
+                   lg:top-[10%] lg:left-[30.77%]"
                ></motion.div>
 
 
@@ -242,9 +242,11 @@ const FoldMap = () => {
                    onClick={() =>
                     handleDotClick(
                         "CRUX (Sep 2022 - June 2023)",
-                        { lg: { top: "20%", left: "38%" } },
+                        {
+                            default: { top: "63%", left: "25%" }, 
+                            lg: { top: "10%", left: "32%" }
+                        },
                         { md: { top: "0%", left: "20%" }, sm: { top: "53%", left: "53%" } },
-                        {default: { top: "0%", left: "25%" } },
                     )
                 }
                    initial="folded"
@@ -277,7 +279,7 @@ const FoldMap = () => {
                    onClick={() =>
                     handleDotClick(
                         "PLF (Sep 2023 - Present)",
-                        { lg: { top: "20%", left: "68%" } },
+                        { lg: { top: "10%", left: "72%" } },
                         { md: { top: "0%", left: "80%" }, sm: { top: "53%", left: "56%" } },
                         {default: { top: "0%", left: "25%" } },
                     )
@@ -317,8 +319,8 @@ const FoldMap = () => {
                         exit={{ opacity: 0, scale: 0.9 }}   // Exit animation
                         transition={{ duration: 0.2, ease: "easeInOut" }}
                     >
-                        <h3 className="text-lg font-bold">{selectedDot.job}</h3>
-                        <ul className="list-disc pl-5 mt-2 space-y-1">
+                        <h3 className="font-bold text-sm md:text-md lg:text-lg">{selectedDot.job}</h3>
+                        <ul className="list-disc pl-5 mt-2 space-y-1 text-sm md:text-md lg:text-lg">
                             {locationDetails[selectedDot.job].map((point, index) => (
                                 <li key={index}>{point}</li>
                             ))}
@@ -341,6 +343,3 @@ const FoldMap = () => {
 
 
 export default FoldMap;
-
-
-

@@ -27,7 +27,7 @@ return (
   id="hero"
   className="bg-[#fff0db]"
 >
-  <div className="h-screen flex flex-col items-center justify-center text-center p-6 pl-20 md:pl-30 lg:pl-40">
+  <div className="h-screen flex flex-col items-center justify-center text-center p-6 pl-20 md:pl-30 lg:pl-39 lg:ml-20">
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
