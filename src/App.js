@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Hero from './pages/Hero';
 import About from './pages/About'

@@ -18,7 +18,7 @@ useEffect(() => {
     setCurrentWordIndexBottom((prev) => (prev + 1) % wordsBottom.length);
   }, wordDuration); // Update every 2 seconds
   return () => clearInterval(interval);
-}, []);
+}, [wordDuration, wordsTop.length, wordsBottom.length]);
 
 
 
