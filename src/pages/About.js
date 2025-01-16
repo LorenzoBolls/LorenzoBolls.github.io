@@ -3,6 +3,7 @@ import headshot from "../assets/headshot.jpeg";
 import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaFigma } from "react-icons/fa";
 import { SiJavascript, SiMongodb, SiCplusplus, SiBootstrap, SiTailwindcss, SiGnubash, SiLinux, SiOpencv } from "react-icons/si";
 
+
 const About = () => {
   const technologies = [
     { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" /> },
@@ -31,7 +32,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-12 px-6">
+    <div className="py-12 px-6">
         <motion.div
           id="about"
           whileInView={{ opacity: 1 }}
