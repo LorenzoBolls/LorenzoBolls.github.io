@@ -163,7 +163,7 @@ const FoldMap = () => {
                   }}
                   className="flex w-full justify-center text-xl font-semibold md:text-4xl"
               >
-                  <p className="rounded-2xl bg-white px-12 py-5 shadow-lg">
+                  <p className="rounded-2xl bg-white border-black border-2 px-12 py-5 shadow-lg">
                       Click on the Red Dots 🔴
                   </p>
               </motion.div>
@@ -182,15 +182,11 @@ const FoldMap = () => {
                   }}
                   className="flex w-full justify-center text-xl font-semibold md:text-4xl"
               >
-                  <p className="rounded-2xl bg-white px-12 py-5 shadow-lg">
+                  <p className="rounded-2xl bg-white border-black border-2 px-12 py-5 shadow-lg">
                       Drag to the right to see my experiences!
                   </p>
               </motion.div>
 
-
-
-
-               {/* TEST RED DOTS */ }
                {/* SF - Grosvenor*/}
                <motion.div
                    variants={{
@@ -223,11 +219,11 @@ const FoldMap = () => {
                        duration: 0.2,
                        ease: "easeInOut",
                    }}
-                   className="absolute rounded-full bg-red-500 w-3 h-3 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg 
+                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg 
                    top-[10%] left-[31%] 
                    sm:top-[10%] sm:left-[31.5%] 
                    md:top-[10%] md:left-[30.5%] 
-                   lg:top-[10%] lg:left-[30.5%]"
+                   lg:top-[10%] lg:left-[31%]"
                ></motion.div>
 
 
@@ -258,7 +254,7 @@ const FoldMap = () => {
                        duration: 0.2,
                        ease: "easeInOut",
                    }}
-                   className="absolute rounded-full bg-red-500 w-3 h-3 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
+                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
                    top-[47%] left-[53%]
                    sm:top-[48%] sm:left-[53%]
                    md:top-[55%] md:left-[54%]
@@ -293,7 +289,7 @@ const FoldMap = () => {
                        duration: 0.2,
                        ease: "easeInOut",
                    }}
-                   className="absolute rounded-full bg-red-500 w-3 h-3 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
+                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
                    top-[47%] left-[56%]
                    sm:top-[48%] sm:left-[56%]
                    md:top-[55%] md:left-[56%]

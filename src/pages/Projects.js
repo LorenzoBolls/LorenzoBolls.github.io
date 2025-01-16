@@ -64,7 +64,7 @@ const Projects = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row gap-6 hover:scale-105 transition-transform duration-300"
+              className="bg-white border-black border-2 shadow-md rounded-lg p-6 flex flex-col md:flex-row gap-6 hover:scale-105 transition-transform duration-300"
               whileHover={{ scale: 1.05 }}
               viewport={{ once: true, amount: 0.2 }}
               variants={{

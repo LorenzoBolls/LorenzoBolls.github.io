@@ -40,7 +40,7 @@ const About = () => {
           initial={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-lg p-8">
+          <div className="max-w-5xl mx-auto bg-white border-black border-2 shadow-xl rounded-lg p-8">
             <motion.h1
               className="text-5xl font-extrabold text-gray-800 mb-8 text-center"
               whileInView={{ scale: 1, opacity: 1 }}
