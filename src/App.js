@@ -4,7 +4,6 @@ import Hero from './pages/Hero';
 import About from './pages/About'
 import Experiences from './pages/Experiences'
 import Navbar from './components/Navbar'
-import FoldMap from './components/FoldMap'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 
@@ -16,7 +15,7 @@ const App = () => {
       <main>
         <Hero />
         <About />
-        <FoldMap />
+        <Experiences />
         <Projects />
         <Contact />
       </main>
