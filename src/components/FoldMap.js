@@ -81,6 +81,28 @@ const FoldMap = () => {
 
    return (
        <div className="overflow-x-clip relative">
+            <motion.div
+                variants={{
+                    folded: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0, // Normal position
+                    },
+                    open: {
+                    opacity: 0,
+                    scale: 0.9,
+                    y: -30, // Adjust position or fade out when open
+                    },
+                }}
+                animate={isFolded ? "folded" : "open"}
+                initial="folded"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="text-xl font-semibold md:text-2xl lg:text-3xl mx-auto"
+                >
+                <p className="rounded-2xl bg-white border-black border-2 px-6 py-3 md:px-8 md:py-4 shadow-lg max-w-fit text-center mx-auto">
+                    Drag the map to the right to see my experiences!
+                </p>
+            </motion.div>
 
 
            {/* Main container for the folding map */}
@@ -148,161 +170,142 @@ const FoldMap = () => {
 
 
            {/* Paragraph */}
-              <motion.div
-                  variants={{
-                      folded: {
-                          opacity: 0,
-                          scale: 0.9,
-                          y: 30,
-                      },
-                      open: {
-                          opacity: 1,
-                          scale: 1,
-                          y: 0,
-                      },
-                  }}
-                  className="flex w-full justify-center text-xl font-semibold md:text-4xl"
-              >
-                  <p className="rounded-2xl bg-white border-black border-2 px-6 py-3 md:px-12 md:py-5 shadow-lg w-auto max-w-full">
-                      Click on the Red Dots 🔴
-                  </p>
-              </motion.div>
-              <motion.div
-                  variants={{
-                      folded: {
-                       opacity: 1,
-                       scale: 1,
-                       y: 0,
-                      },
-                      open: {
-                       opacity: 0,
-                       scale: 0.9,
-                       y: 30,
-                      },
-                  }}
-                  className="flex w-full justify-center text-xl font-semibold md:text-4xl"
-              >
-                  <p className="rounded-2xl bg-white border-black border-2 px-12 py-5 shadow-lg">
-                      Drag to the right to see my experiences!
-                  </p>
-              </motion.div>
+            <motion.div
+                variants={{
+                    folded: {
+                        opacity: 0,
+                        scale: 0.9,
+                        y: 30,
+                    },
+                    open: {
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                    },
+                }}
+                className="flex w-full justify-center text-xl font-semibold md:text-4xl mx-auto"
+            >
+                <p className="rounded-2xl bg-white border-black border-2 px-6 py-3 md:px-12 md:py-5 shadow-lg w-auto max-w-full">
+                    Click on the Red Dots 🔴
+                </p>
+            </motion.div>
 
-               {/* SF - Grosvenor*/}
-               <motion.div
-                   variants={{
-                       folded: {
-                           opacity: 0,
-                           scale: 0,
-                       },
-                       open: {
-                           opacity: 1,
-                           scale: 1,
-                       },
-                   }}
-                    onClick={() =>
-                        handleDotClick(
-                            "Grosvenor (Summer 2024)",
-                            {
-                                default: { top: "10%", left: "31%" }, // Default position for xs
-                                lg: { top: "10%", left: "32%" },
-                            },
-                            {
-                                md: { top: "10%", left: "30.5%" },
-                                sm: { top: "10%", left: "31.5%" },
-                            }
-                        )
-                    }
-                   initial="folded"
-                   animate={isFolded ? "folded" : "open"}
-                   transition={isFolded ? { duration: 0.1 } : {
-                       delay: 0.3,
-                       duration: 0.2,
-                       ease: "easeInOut",
-                   }}
-                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg 
-                   top-[10%] left-[31%] 
-                   sm:top-[10%] sm:left-[31.5%] 
-                   md:top-[10%] md:left-[30.5%] 
-                   lg:top-[10%] lg:left-[30.77%]"
-               ></motion.div>
-
-
-               {/* LA - UCLA CRUX */}
-               <motion.div
-                   variants={{
-                       folded: {
-                           opacity: 0,
-                           scale: 0,
-                       },
-                       open: {
-                           opacity: 1,
-                           scale: 1,
-                       },
-                   }}
-                   onClick={() =>
+            {/* SF - Grosvenor*/}
+            <motion.div
+                variants={{
+                    folded: {
+                        opacity: 0,
+                        scale: 0,
+                    },
+                    open: {
+                        opacity: 1,
+                        scale: 1,
+                    },
+                }}
+                onClick={() =>
                     handleDotClick(
-                        "CRUX (Sep 2022 - June 2023)",
+                        "Grosvenor (Summer 2024)",
                         {
-                            default: { top: "63%", left: "25%" }, 
-                            lg: { top: "10%", left: "32%" }
+                            default: { top: "32%", left: "33%" }, // Default position for xs
+                            lg: { top: "20%", left: "31.2%" },
                         },
-                        { md: { top: "0%", left: "20%" }, sm: { top: "53%", left: "53%" } },
+                        {
+                            md: { top: "20%", left: "31.5%" },
+                            sm: { top: "23%", left: "32.5%" },
+                        }
                     )
                 }
-                   initial="folded"
-                   animate={isFolded ? "folded" : "open"}
-                   transition={isFolded ? { duration: 0.1 } : {
-                       delay: 0.3,
-                       duration: 0.2,
-                       ease: "easeInOut",
-                   }}
-                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
-                   top-[47%] left-[53%]
-                   sm:top-[48%] sm:left-[53%]
-                   md:top-[55%] md:left-[54%]
-                   lg:top-[65%] lg:left-[54%]"
-               ></motion.div>
+                initial="folded"
+                animate={isFolded ? "folded" : "open"}
+                transition={isFolded ? { duration: 0.1 } : {
+                    delay: 0.3,
+                    duration: 0.2,
+                    ease: "easeInOut",
+                }}
+                className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg 
+                top-[33%] left-[31.9%] 
+                sm:top-[23.5%] sm:left-[31.2%] 
+                md:top-[22%] md:left-[31%] 
+                lg:top-[20%] lg:left-[30.9%]"
+            ></motion.div>
 
 
-               {/* LA - PLF */}
-               <motion.div
-                   variants={{
-                       folded: {
-                           opacity: 0,
-                           scale: 0,
-                       },
-                       open: {
-                           opacity: 1,
-                           scale: 1,
-                       },
-                   }}
-                   onClick={() =>
-                    handleDotClick(
-                        "PLF (Sep 2023 - Present)",
-                        { lg: { top: "10%", left: "72%" } },
-                        { md: { top: "0%", left: "80%" }, sm: { top: "53%", left: "56%" } },
-                        {default: { top: "0%", left: "25%" } },
-                    )
-                }
-                   initial="folded"
-                   animate={isFolded ? "folded" : "open"}
-                   transition={isFolded ? { duration: 0.1 } : {
-                       delay: 0.3,
-                       duration: 0.2,
-                       ease: "easeInOut",
-                   }}
-                   className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
-                   top-[47%] left-[56%]
-                   sm:top-[48%] sm:left-[56%]
-                   md:top-[55%] md:left-[56%]
-                   lg:top-[65%] lg:left-[56%]"
-               ></motion.div>
+            {/* LA - UCLA CRUX */}
+            <motion.div
+                variants={{
+                    folded: {
+                        opacity: 0,
+                        scale: 0,
+                    },
+                    open: {
+                        opacity: 1,
+                        scale: 1,
+                    },
+                }}
+                onClick={() =>
+                handleDotClick(
+                    "CRUX (Sep 2022 - June 2023)",
+                    {
+                        default: { top: "10%", left: "8%" }, 
+                        lg: { top: "10%", left: "32%" }
+                    },
+                    { md: { top: "10%", left: "20%" }, sm: { top: "10%", left: "20%" } },
+                )
+            }
+                initial="folded"
+                animate={isFolded ? "folded" : "open"}
+                transition={isFolded ? { duration: 0.1 } : {
+                    delay: 0.3,
+                    duration: 0.2,
+                    ease: "easeInOut",
+                }}
+                className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
+                top-[68%] left-[53%]
+                sm:top-[68%] sm:left-[53%]
+                md:top-[68%] md:left-[54%]
+                lg:top-[71%] lg:left-[54%]"
+            ></motion.div>
+
+
+            {/* LA - PLF */}
+            <motion.div
+                variants={{
+                    folded: {
+                        opacity: 0,
+                        scale: 0,
+                    },
+                    open: {
+                        opacity: 1,
+                        scale: 1,
+                    },
+                }}
+                onClick={() =>
+                handleDotClick(
+                    "PLF (Sep 2023 - Present)",
+                    { lg: { top: "10%", left: "72%" } },
+                    { md: { top: "0%", left: "83%" }, sm: { top: "13%", left: "89%" } },
+                    {default: { top: "0%", left: "90%" } },
+                )
+            }
+                initial="folded"
+                animate={isFolded ? "folded" : "open"}
+                transition={isFolded ? { duration: 0.1 } : {
+                    delay: 0.3,
+                    duration: 0.2,
+                    ease: "easeInOut",
+                }}
+                className="absolute rounded-full bg-red-500 border-black border-2 w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 z-50 cursor-pointer shadow-lg
+                top-[69%] left-[56%]
+                sm:top-[69%] sm:left-[56%]
+                md:top-[69%] md:left-[56%]
+                lg:top-[72%] lg:left-[56%]"
+            ></motion.div>
 
 
 
 
-                {/* Panel for Job Details */}
-                <AnimatePresence onExitComplete={handleExitComplete}>
+            {/* Panel for Job Details */}
+            <AnimatePresence onExitComplete={handleExitComplete}>
                 {!isFolded && selectedDot && (
                     <motion.div
                         key={selectedDot.job} // Unique key for AnimatePresence
