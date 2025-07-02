@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import BruinMatesPhoto from "../assets/Bruin-Mates-Photo.png";
 import BlinkTranslatorPhoto from "../assets/Blink-Translator-Photo.png";
-import PrecisionRevisionPhoto from "../assets/Precision-Revision-Photo.png";
+import SkribezShowcase from "../assets/Skribez-showcase.png";
 
 const projectsData = [
   {
@@ -15,13 +15,14 @@ const projectsData = [
     },
   },
   {
-    title: "Precision Revision",
+    title: "Skribez",
     description:
-      "A C++ file revision system that optimizes file storage using hashing algorithms, reducing file size by 92%.",
-    technologies: ["C++"],
-    image: PrecisionRevisionPhoto,
+      "An AI-powered writing tool that supports students throughout the writing process by combining a text editor with an interactive AI assistant, enhancing essay quality while preserving user agency",
+    technologies: ["React", "Python", "FastAPI", "Multi-LLM Integration", "MongoDB"],
+    image: SkribezShowcase,
     links: {
-      github: "https://github.com/LorenzoBolls/Revision",
+      github: "https://github.com/danila6231/Scribez",
+      liveWebsite: "https://www.skribez.com",
     },
   },
   {
@@ -105,12 +106,22 @@ const Projects = () => {
                       GitHub
                     </a>
                   )}
+                  {project.links.liveWebsite && (
+                    <a
+                      href={project.links.liveWebsite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-500 hover:underline"
+                    >
+                      Live Website
+                    </a>
+                  )}
                   {project.links.demo && (
                     <a
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-green-500 hover:underline"
+                      className="text-red-500 hover:underline"
                     >
                       Demo Video
                     </a>
